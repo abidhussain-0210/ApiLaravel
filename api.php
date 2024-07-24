@@ -22,7 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     //Route::get('/demo' , [DemoController::class , 'index']);
     
     Route::get('/user' , [UserController::class , 'index']);        
-    Route::get('/user/{id}' , [UserController::class , 'showSingle']);        
+    //Route::get('/user/{id}' , [UserController::class , 'showSingle']);        
     Route::post('/user/store' , [UserController::class , 'store']);        
     Route::post('/user/update/{id}' , [UserController::class , 'update']);        
     Route::delete('/user/delete/{id}' , [UserController::class , 'delete']);        
+    Route::post('/user/upload-image' , [UserController::class , 'uploadImage']);        
+    Route::get('/user/list/{id?}' , [UserController::class , 'optionalPara']);        
+    Route::get('user/search/{name?}', [UserController::class , 'Search']);
